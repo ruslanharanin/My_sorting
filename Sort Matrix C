@@ -1,0 +1,25 @@
+void SortQuick1x(int L,int R){
+    int x,temp;
+    int n=5,m=5;
+    int B[n][m];
+  
+    x=B[(L+R)/2];
+    int i=L,j=R;
+ 
+    while(i<=j){
+        while(B[i]<x) i++;
+        while(B[j]>x) j--;
+ 
+        if(i<=j){
+            temp=B[i];
+            B[i]=B[j];
+            B[j]=temp;
+            i++;
+            j--;
+        }
+    }
+    if(L<j) SortQuick1x(L,j);
+    if(i<R) SortQuick1x(i,R);
+ 
+ 
+}
